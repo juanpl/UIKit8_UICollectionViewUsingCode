@@ -26,7 +26,7 @@ class ViewController: UIViewController, UICollectionViewDataSource {
     private let swiftBetaCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        layout.itemSize = .init(width: 200, height: 200)
+        layout.itemSize = .init(width: 200, height: 60)
         //layout.minimumLineSpacing = 200
         //layout.minimumInteritemSpacing = 200
         
@@ -42,7 +42,7 @@ class ViewController: UIViewController, UICollectionViewDataSource {
         
         swiftBetaCollectionView.backgroundColor = .blue
         swiftBetaCollectionView.dataSource = self
-        swiftBetaCollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "UICollectionViewCell")
+        swiftBetaCollectionView.register(SwiftBetaCollectionViewCell.self, forCellWithReuseIdentifier: "SwiftBetaCollectionViewCell")
         view.addSubview(swiftBetaCollectionView)
         
         NSLayoutConstraint.activate([
@@ -59,16 +59,12 @@ class ViewController: UIViewController, UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "UICollectionViewCell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SwiftBetaCollectionViewCell", for: indexPath) as! SwiftBetaCollectionViewCell
         cell.backgroundColor = .red
         
         let model = house[indexPath.row]
         
-        var listContentConfiguration = UIListContentConfiguration.cell()
-        listContentConfiguration.text = model.title
-        listContentConfiguration.image = UIImage(systemName: model.imageName)
-        
-        cell.contentConfiguration = listContentConfiguration
+        cell.configure(model: model)
         
         return cell
     }
