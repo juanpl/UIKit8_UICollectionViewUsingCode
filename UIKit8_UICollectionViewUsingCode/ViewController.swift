@@ -17,7 +17,27 @@ let house = [
     Device(title: "Mac mini", imageName: "macmini"),
     Device(title: "Mac Pro", imageName: "macpro.gen3"),
     Device(title: "Pantallas", imageName: "display.2"),
-    Device(title: "Apple TV", imageName: "appletv")
+    Device(title: "Apple TV", imageName: "appletv"),
+    Device(title: "Laptop", imageName: "laptopcomputer"),
+    Device(title: "Mac mini", imageName: "macmini"),
+    Device(title: "Mac Pro", imageName: "macpro.gen3"),
+    Device(title: "Pantallas", imageName: "display.2"),
+    Device(title: "Apple TV", imageName: "appletv"),
+    Device(title: "Laptop", imageName: "laptopcomputer"),
+    Device(title: "Mac mini", imageName: "macmini"),
+    Device(title: "Mac Pro", imageName: "macpro.gen3"),
+    Device(title: "Pantallas", imageName: "display.2"),
+    Device(title: "Apple TV", imageName: "appletv"),
+    Device(title: "Laptop", imageName: "laptopcomputer"),
+    Device(title: "Mac mini", imageName: "macmini"),
+    Device(title: "Mac Pro", imageName: "macpro.gen3"),
+    Device(title: "Pantallas", imageName: "display.2"),
+    Device(title: "Apple TV", imageName: "appletv"),
+    Device(title: "Laptop", imageName: "laptopcomputer"),
+    Device(title: "Mac mini", imageName: "macmini"),
+    Device(title: "Mac Pro", imageName: "macpro.gen3"),
+    Device(title: "Pantallas", imageName: "display.2"),
+    Device(title: "Apple TV", imageName: "appletv"),
 ]
 
 class ViewController: UIViewController, UICollectionViewDataSource {
@@ -46,7 +66,7 @@ class ViewController: UIViewController, UICollectionViewDataSource {
         view.addSubview(swiftBetaCollectionView)
         
         NSLayoutConstraint.activate([
-            swiftBetaCollectionView.topAnchor.constraint(equalTo: view.topAnchor),
+            swiftBetaCollectionView.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor),
             swiftBetaCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             swiftBetaCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             swiftBetaCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor)
